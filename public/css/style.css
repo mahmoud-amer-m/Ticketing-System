@@ -1,0 +1,201 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 4, 2017, 10:46:08 AM
+    Author     : jouf
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+/*.droid-arabic-kufi{font-family: 'GESS','Droid Arabic Kufi', serif;}*/
+
+table, a, p, h1, h2, h3, h4, h5, h6, div, label {
+    font-family: 'Droid Arabic Kufi' !important;
+}
+html {
+    font-family: 'Droid Arabic Kufi','Open Sans', sans-serif !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust:     100%;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: 'Droid Arabic Kufi',monospace, monospace !important;
+    font-size: 1em;
+}
+
+pre {
+    background: #eee;
+    font-family: 'Droid Arabic Kufi',"Courier 10 Pitch", Courier, monospace !important;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+}
+
+.sub_menu {
+    /*float: right;*/
+    direction: rtl;
+    background-color: whitesmoke;
+}
+
+.one_form_element {
+    float: none;
+    margin: auto;
+}
+.one_form_element label {
+    float: none;
+    
+}
+.container {
+    width: 90%;
+}
+.panel {
+    direction: rtl;
+}
+.row {
+    text-align: center;
+}
+#app-navbar-collapse {
+    float: left;
+}
+
+.navbar-header {
+    float: right !important;
+}
+.pagination>li {
+    float: right;
+}
+.fancybox-wrap {
+    width: 70% !important;
+    height: 90% !important;
+}
+.fancybox-skin {
+    height: 95% !important;
+}
+.fancybox-outer {
+    height: 95% !important;
+}
+.fancybox-inner {
+    height: 94% !important;
+}
+.bordered_nav_btn {
+    background-color: #c0d0d0 !important;
+}
+.panel-heading {
+    padding: 0 !important;
+}
+.header_ul {
+    list-style: none;
+}
+.header_ul li {
+    float: right;
+}
+.header_ul li a {
+    padding: 3px;
+    background-color: #eaf3f3;
+    margin-right: 5px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.tickets_table{
+    /* background: #f0f0f0; */
+    font-family: 'Droid Arabic Kufi',"Courier 10 Pitch", Courier, monospace !important;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    height: 50px;
+    padding: 4px;
+    float: none;
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    /* margin: 1em 0; */
+    width: 100%;
+    overflow: hidden;
+    background: #fbf8f8;
+    color: rgb(73, 83, 115)/*rgb(50, 66, 61)*/;
+    border-radius: 10px;
+    border: 1px solid #6d680d;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+.tickets_table tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.tickets_table tr{
+    font-size: 15px;
+    /*border: 1px solid black;*/
+    border: 1px solid #D9E4E6;
+    /*line-height: 20px;*/
+
+}
+.tickets_table tr:nth-child(odd) {
+    background-color: #EAF3F3;
+}
+.tickets_table td{
+    font-size: 12px;
+    border: 1px solid #6d680d/*1px solid black*/;
+    /*line-height: 20px;*/
+}
+.tickets_table th {
+    text-align: center;
+}
+
+.tickets_table_row_hover{
+    background-color: rgba(80, 77, 16, 0.56)/*#504d10*/ !important;
+    color: white !important;
+}
+
+#multiple_action_container {
+    display: none;
+    float: left; 
+    margin-top: 19px;
+    /*display: block;*/
+    width: 15%;
+    padding: 0;
+    margin-top: -3px;
+}
+#multiple_action_container .jcf-select-text{
+    line-height: 33px;
+}
+#multiple_action_container .jcf-select {
+    height: 33px;
+}
+#multiple_action_container .jcf-unselectable {
+    height: 33px;
+}
+#multiple_action_container fieldset {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+#multiple_action_container select {
+    font-family: 'Droid Arabic Kufi',sans-serif;
+    font-size: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+}
+
+#multiple_action_container button{
+    width: 86px;
+    height: 31px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+    background-color: #6a76a0 !important;
+    color: white;
+}
