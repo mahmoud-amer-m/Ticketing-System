@@ -28,6 +28,8 @@ Route::post('login', 'Auth\LoginController@doLogin');
 Route::get('/users/index', ['uses' =>'UsersController@index']);
 Route::get('/users/create', ['uses' =>'UsersController@create']);
 Route::post('users/adduseraction', ['uses' =>'UsersController@createUserAction']);
+Route::get('users/editUser/{userID}', ['uses' =>'UsersController@editUser']);
+Route::post('users/edituseraction', ['uses' =>'UsersController@editUserAction']);
 
 Route::get('/home/index/{status}', ['uses' =>'HomeController@index']);
 Route::get('/home/edit/{ticketID}', ['uses' =>'HomeController@edit']);

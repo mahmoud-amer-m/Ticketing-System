@@ -59,10 +59,55 @@ class UsersController extends Controller {
         return view('staff.adduser', ['regions' => $maint_regions, 'groups' => $maint_groups]);
     }
     
+    public function editUser($userID) {
+        
+        $user = User::getUser($userID);
+
+        
+        $maint_buildings = $maint_regions = $maint_groups = $maint_region_buildings = array();
+        
+
+        $regions = DB::table('regions')
+                ->get();
+
+        foreach ($regions as $region) {
+            $maint_regions[$region->region_id] = $region->region_name;
+        }
+        $regionBuildings = DB::table('buildings')
+                ->where('building_region', '=', $user->assigned_region)
+                ->get();
+        foreach ($regionBuildings as $building) {
+            $maint_region_buildings[$building->building_id] = $building->building_name;
+        }
+        
+        $buildings= DB::table('buildings')
+                ->where('building_id', '=', $user->assigned_building)
+                ->get();
+        
+        foreach ($buildings as $building) {
+            $maint_buildings[$building->building_id] = $building->building_name;
+        }
+        $groups = DB::table('users_groups')
+                ->get();
+        foreach ($groups as $group) {
+            $maint_groups[$group->group_id] = $group->group_name;
+        }
+
+        return view('staff.editUser', ['regions' => $maint_regions, 'buildings' => $maint_buildings, 'regionBuildings' => $maint_region_buildings, 'groups' => $maint_groups, 'user' => $user]);
+    }
+    
     public function createUserAction() {
         
         $data = Input::get();
         User::addNewUser($data);
+        
+        return redirect('users/index')->with('status', '0!');
+    }
+    
+    public function editUserAction() {
+        
+        $data = Input::get();
+        User::editUserUser($data);
         
         return redirect('users/index')->with('status', '0!');
     }

@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Input; ?>
                                     <td><?php echo $staff_emp->name; ?></td>
                                     <td><?php echo $staff_emp->group_name ?></td>
                                     <td><?php echo $rgn . ' ' . $bldg ?></td>
-                                    <td><a href="<?php echo 'staff-edit-user?userID=' . $staff_emp->id; ?>">تعديل</a></td>
+                                    <td><a href="{{ URL::action('UsersController@editUser', $staff_emp->id) }}">تعديل</a></td>
                                 </tr>
 
 
