@@ -9,7 +9,7 @@
 
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">طلب جديد</div>
+                <div class="panel-heading">مستخدم جديد</div>
                 <div class="panel-body">
                     {{ Form::open(array('url' => 'users/edituseraction')) }}
                     {{ Form::label('الإسم') }}
@@ -24,8 +24,8 @@
                     {{ Form::label('المنطقة') }}
                     {{ Form::select('region', ['' => 'برجاء الاختيار'] + $regions,$user->region_id, array('class' => 'form-control', 'id' => 'region_selects','onchange' => 'doSomething(this.value)')) }}
                     <br>
-                    {{ Form::hidden('invisible', '/ajax', array('required', 'id' => 'buildings_url')) }}
-                    {{ Form::hidden('user_id', $user->id, array('required', 'id' => 'user_id')) }}
+                    {{ Form::hidden('invisible', '/ajax', array( 'id' => 'buildings_url')) }}
+                    {{ Form::hidden('user_id', $user->id, array( 'id' => 'user_id')) }}
                     {{ Form::label('المبنى') }}
                     {{ Form::select('building', ['' => 'برجاء الاختيار'] + $regionBuildings,$user->building_id, array('class' => 'form-control', 'id' => 'building')) }}
                     <!--<select class="select_element form-control" id="building" name="building" required></select>-->

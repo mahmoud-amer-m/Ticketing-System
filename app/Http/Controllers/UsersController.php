@@ -96,6 +96,18 @@ class UsersController extends Controller {
         return view('staff.editUser', ['regions' => $maint_regions, 'buildings' => $maint_buildings, 'regionBuildings' => $maint_region_buildings, 'groups' => $maint_groups, 'user' => $user]);
     }
     
+    public function userSettings() {
+        $user = User::getUser(Auth::user()->id);
+        return view('staff.userSettings', ['user' => $user]);
+    }
+    
+    public function editsettingsaction() {
+        $data = Input::get();
+        User::saveUserSettings($data);
+        
+        return redirect('users/settings');
+    }
+
     public function createUserAction() {
         
         $data = Input::get();

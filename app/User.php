@@ -57,7 +57,13 @@ class User extends Authenticatable {
                 ->update(['username' => $data['username'], 'name' => $data['name'], 'user_group' => $data['groups'], 'assigned_region' => $data['region'] ? $data['region'] : 0, 'assigned_building' => $data['building'] ? $data['building'] : 0]);
     }
     
-    public static function getUser($userID) {
+    public static function saveUserSettings(array $data){
+        DB::table('users')
+                ->where('id', '=', $data['user_id'])
+                ->update(['email' => $data['email'], 'email_enabled' => $data['email_enabled']]);
+    }
+
+        public static function getUser($userID) {
         $user = DB::table("users")
                 ->leftJoin('buildings', 'users.assigned_building', '=', 'buildings.building_id')
                 ->leftJoin('regions', 'users.assigned_region', '=', 'regions.region_id')

@@ -78,11 +78,13 @@
                     </ul>
                 </div>
             </div>
+            <?php // var_dump(Route::getCurrentRoute()->getPath()); ?>
             <div class="container sub_menu">
                 <div class="panel-heading sub_menu">
                     <ul class="header_ul">
                         <li><a class="<?php echo (strpos(Route::getCurrentRoute()->getPath(), 'home') !== false) ? "bordered_nav_btn" : ""; ?>" href="<?php echo URL::action('HomeController@index', 0); ?>">الطلبات</a></li>
-                        <li><a class="<?php echo (strpos(Route::getCurrentRoute()->getPath(), 'users') !== false) ? "bordered_nav_btn" : ""; ?>" href="<?php echo URL::action('UsersController@index', 0); ?>">المستخدمين</a></li>
+                        <li><a class="<?php echo ((strpos(Route::getCurrentRoute()->getPath(), 'users') !== false) && strpos(Route::getCurrentRoute()->getPath(), 'settings') == false) ? "bordered_nav_btn" : ""; ?>" href="<?php echo URL::action('UsersController@index', 0); ?>">المستخدمين</a></li>
+                        <li><a class="<?php echo (strpos(Route::getCurrentRoute()->getPath(), 'settings') !== false) ? "bordered_nav_btn" : ""; ?>" href="<?php echo URL::action('UsersController@userSettings', 0); ?>">إعدادات الحساب</a></li>
                     </ul>
                     
                 </div>
