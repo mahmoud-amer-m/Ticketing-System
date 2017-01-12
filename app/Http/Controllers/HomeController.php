@@ -100,5 +100,7 @@ class HomeController extends Controller {
 
         return view('staff.closeTicket', ['ticket_details' => $ticket_details, 'username' => Auth::user()->username]);
     }
+    
+    
 
 }
